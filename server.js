@@ -83,13 +83,10 @@ app.patch("/products/:id", async (req, res) => {
 
 mongoose.set("strictQuery", false);
 mongoose
-  .connect(
-    `mongodb+srv://${username}:${password}@webscraping1.0dp9ibd.mongodb.net/WorkingDatabase?`,
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }
-  )
+  .connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then((db) => {
     console.log("connected to MongoDB");
     app.listen(PORT, () => {
