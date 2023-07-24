@@ -15,9 +15,6 @@ const headers = {
   "Access-Control-Allow-Methods": "POST,PATCH,OPTIONS",
 };
 
-const username = encodeURIComponent("admin");
-const password = encodeURIComponent("DEC291998");
-
 app.use(express.json());
 app.use(bodyParser.json({ limit: "200mb" }));
 app.use(cors());
